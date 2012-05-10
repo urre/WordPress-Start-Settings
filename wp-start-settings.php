@@ -2,14 +2,13 @@
 /*
 Plugin Name: WordPress Start Settings
 Plugin URI:  http://urre.me
-Description: Some default configuration settings. See 'wp-admin/options.php' for more options.
+Description: Some default configuration settings.
 Version:     0.1
 Author:      Urban Sandén
 Author URI:  http://urre.me
 */
 
-function set_urre_defaults()
-{
+function wp_start_settings() {
     global $wpdb;
 
     $o = array(
@@ -37,14 +36,14 @@ function set_urre_defaults()
         update_option($k, $v);
     }
 
-    // Delete dummy posts, pages and content
+    # Delete dummy posts, pages and comment
     wp_delete_post(1, TRUE);
     wp_delete_post(2, TRUE);
     wp_delete_comment(1);
 
-    // Empty blogroll
+    # Empty blogroll
     $wpdb->query("DELETE FROM $wpdb->links WHERE link_id != ''");
 
     return;
 }
-register_activation_hook(__FILE__, 'set_urre_defaults');
+register_activation_hook(__FILE__, 'wp_start_settings');
