@@ -1,6 +1,6 @@
 # WordPress Start Settings
 
-Just some basic default settings for setting up WordPress
+A simple plugin with some basic default settings for setting up WordPress
 
 --
 
