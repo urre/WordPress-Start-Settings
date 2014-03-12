@@ -3,7 +3,7 @@
 Plugin Name: WordPress Start Settings
 Plugin URI:  http://urre.me
 Description: Some default configuration settings.
-Version:     0.1
+Version:     0.2
 Author:      Urban Sandén
 Author URI:  http://urre.me
 */
@@ -13,7 +13,6 @@ function wp_start_settings() {
 
     $o = array(
         'avatar_default'            => 'blank',
-        'admin_email'               => 'hej@urre.me',
         'avatar_rating'             => 'G',
         'category_base'             => '/kategori',
         'tag_base'                  => '/etikett',
